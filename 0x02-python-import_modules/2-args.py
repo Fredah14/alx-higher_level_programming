@@ -4,16 +4,16 @@ if __name__ == "__main__":
 
     import sys
 
-    i = len(sys.argv) - 1
+    num_arguments = len(sys.argv) - 1
     arguments = sys.argv[1:]
 
-    if i == 0:
+    if num_arguments == 0:
         print("Number of argument(s).")
     
     else:
-        print("Number of argument(s):", i)
+        print("Number of argument(s):", num_arguments)
 
-    if i == 1:
+    if num_arguments == 1:
         print("Argument:", arguments[0])
 
     else:

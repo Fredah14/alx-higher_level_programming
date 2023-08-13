@@ -8,7 +8,7 @@ if __name__ == "__main__":
     arguments = sys.argv[1:]
 
     if i == 0:
-        print("0 arguments.")
+        print("Number of argument(s).")
     
     else:
         print("Number of argument(s):", i)
@@ -17,7 +17,7 @@ if __name__ == "__main__":
         print("Argument:", arguments[0])
 
     else:
-        print("1 argument:", ", ".join(arguments))
+        print("Arguments:", ", ".join(arguments))
 
         print()
         

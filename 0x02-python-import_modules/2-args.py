@@ -9,10 +9,7 @@ if __name__ == "__main__":
     if num_arguments == 0:
         print("0 argument(s).")
     
-    else:
-        print("Number of argument(s):", num_arguments)
-
-    if num_arguments == 1:
+    elif num_arguments == 1:
         print("1 argument:")
 
     else:

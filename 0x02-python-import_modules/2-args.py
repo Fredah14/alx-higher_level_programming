@@ -18,5 +18,5 @@ if __name__ == "__main__":
     else:
         print("{} arguments:".format(num_arguments))
                 
-        for i, arg in enumerate(arguments, start=1):
+        for i in range(num_arguments):
             print("{}: {}".format(i + 1, sys.arg[i + 1]))

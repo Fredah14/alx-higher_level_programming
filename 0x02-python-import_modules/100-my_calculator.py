@@ -12,7 +12,6 @@ if __name__ == "__main__":
     a = int(sys.argv[1])
     operator = sys.argv[2]
     b = int(sys.argv[3])
-    result = (a,b)
 
     if operator == "+":
         result = add(a, b)
@@ -23,6 +22,7 @@ if __name__ == "__main__":
     elif operator == "/":
         result = div(a, b)
     else:
-        print("Unknown operator. Available operators: +, -, * and /"\)
+        print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
-    print("{} {} {} = {}".format(a, operator, b, operator[sys.argv[2]](a, b))
+
+    print("{} {} {} = {}".format(a, operator, b, result))

@@ -5,7 +5,6 @@ if __name__ == "__main__":
     import sys
 
     num_arguments = len(sys.argv) - 1
-    arguments = sys.argv[1:]
 
     if num_arguments == 0:
         print("0 argument(s).")
@@ -14,12 +13,10 @@ if __name__ == "__main__":
         print("Number of argument(s):", num_arguments)
 
     if num_arguments == 1:
-        print("Argument:", arguments[0])
+        print("1 argument:")
 
     else:
-        print("Arguments:", ", ".join(arguments))
-
-        print()
-        
+        print("{} arguments:".format(num_arguments))
+                
         for i, arg in enumerate(arguments, start=1):
             print("{}: {}".format(i + 1, sys.arg[i + 1]))

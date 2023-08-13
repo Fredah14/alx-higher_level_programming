@@ -4,19 +4,16 @@ if __name__ == "__main__":
 
     import sys
 
-num_arguments = len(sys.argv) - 1
-arguments = sys.argv[1:]
+    num_arguments = len(sys.argv) - 1
 
-if num_arguments == 0:
-    print("Number of argument(s) .")
-else:
-    print("Number of argument(s):", num_arguments)
-    if num_arguments == 1:
-        print("Argument:", arguments[0])
+    if num_arguments == 0:
+        print("0 arguments.")
+
+    elif num_arguments == 1:
+        print("1 argument:")
+
     else:
-        print("Arguments:", ", ".join(arguments))
+        print("{} arguments:".format(num_arguments))
 
-    print()
-
-    for i, arg in enumerate(arguments, start=1):
-        print("{}: {}".format(i, arg))
+        for i in range(num_arguments):
+            print("{}: {}".format(i + 1, sys.argv[i + 1]))

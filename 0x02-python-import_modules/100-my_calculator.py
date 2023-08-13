@@ -17,3 +17,5 @@ if __name__ == "__main__":
     if op != '+' and op != '-' and op != '*' and op != '/':
         print("Unknown operator. Available operators: +, -, * and /"\)
         sys.exit(1)
+
+              print("{} {} {} = {}".format(a, op, b, result))

@@ -15,6 +15,6 @@ if __name__ == "__main__":
 
     my_list = [1, 2, 3, 4, 5]
     idx = 3
-    new_list = delete_at(my_list, idx)
+    new_list = delete_at(my_list.copy(), idx)
     print(new_list)
     print(my_list)

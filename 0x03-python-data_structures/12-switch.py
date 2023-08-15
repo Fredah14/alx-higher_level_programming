@@ -4,4 +4,4 @@ b = 10
 
 a, b = b, a
 
-print("a={} - b={}".format(a, b))
+print("a={:d} - b={}".format(a, b))

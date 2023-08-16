@@ -2,13 +2,6 @@
 #include <stdlib.h>
 #include "lists.h"
 
-struct listint_s {
-    int n;
-    struct listint_s *next;
-};
-
-typedef struct listint_s listint_t;
-
 int check_cycle(listint_t *list) {
     listint_t *slow = list;
     listint_t *fast = list;
@@ -18,34 +11,52 @@ int check_cycle(listint_t *list) {
         fast = fast->next->next;
 
         if (slow == fast) {
-            return (1);
+            return 1; // Cycle detected
         }
     }
 
-    return (0);
+    return 0; // No cycle
 }
 
 int main(void) {
-    listint_t *head = malloc(sizeof(listint_t));
-    head->n = 1;
-    head->next = malloc(sizeof(listint_t));
-    head->next->n = 2;
-    head->next->next = malloc(sizeof(listint_t));
-    head->next->next->n = 3;
-    head->next->next->next = head->next; // Creating a cycle
+    listint_t *head;
+    listint_t *current;
+    listint_t *temp;
+    int i;
 
-    int hasCycle = check_cycle(head);
-    if (hasCycle) {
-        printf("1\n");
-    } else {
-        printf("0\n");
-    }
+    head = NULL;
+    add_nodeint(&head, 0);
+    add_nodeint(&head, 1);
+    add_nodeint(&head, 2);
+    add_nodeint(&head, 3);
+    add_nodeint(&head, 4);
+    add_nodeint(&head, 98);
+    add_nodeint(&head, 402);
+    add_nodeint(&head, 1024);
+    print_listint(head);
 
-    // Clean up memory
-    head->next->next->next = NULL; // Breaking the cycle before freeing
-    free(head->next->next);
-    free(head->next);
-    free(head);
+    if (check_cycle(head) == 0)
+        printf("Linked list has no cycle\n");
+    else if (check_cycle(head) == 1)
+        printf("Linked list has a cycle\n");
 
-    return (0);
+    current = head;
+    for (i = 0; i < 4; i++)
+        current = current->next;
+    temp = current->next;
+    current->next = head;
+
+    if (check_cycle(head) == 0)
+        printf("Linked list has no cycle\n");
+    else if (check_cycle(head) == 1)
+        printf("Linked list has a cycle\n");
+
+    current = head;
+    for (i = 0; i < 4; i++)
+        current = current->next;
+    current->next = temp;
+
+    free_listint(head);
+
+    return 0;
 }
